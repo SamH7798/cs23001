@@ -1,0 +1,25 @@
+#indef _CLASS_HPP_
+#define _CLASS_HPP_
+
+class point {
+ private:
+  double x, y;
+
+ public:
+  point(); // default constructor
+  point(doubele nx, double ny);
+
+  void init (double, double);
+  void setx (double);
+  void sety(double);
+
+  double getx(){return x;};
+  
+    double gety(){return y;};
+
+    double dist(point new_p;) ;
+    
+
+     }
+
+#endif 

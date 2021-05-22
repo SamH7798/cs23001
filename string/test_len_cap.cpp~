@@ -1,0 +1,53 @@
+#include "string.hpp"
+#include <cassert>
+#include <iostream>
+
+//===========================================================================
+int main ()
+{
+  {
+    //------------------------------------------------------
+    // SETUP FIXTURE
+    String str1("qwerty");
+
+    int result1 = str1.length();
+    int result2 = str1.capacity();
+    // TEST
+
+    // VERIFY
+    assert(result1 == 6);
+    assert(result2 == 255);
+  }
+
+
+  {
+    //------------------------------------------------------
+    // SETUP FIXTURE
+    String str1("fdert3");
+
+      int result1 = str1.length();
+    int result2 = str1.capacity();
+    // TEST
+
+    // VERIFY
+    assert(result1 == 6);
+    assert(result2 == 255);
+  }
+
+  {
+    //------------------------------------------------------
+    // SETUP FIXTURE
+    String str1("helloworld");
+
+      int result1 = str1.length();
+    int result2 = str1.capacity();
+    // TEST
+
+    // VERIFY
+    assert(result1 == 9);
+    assert(result2 == 255);
+  }
+
+  std::cout<< "Done testing length capacity" <<std::endl;
+
+}

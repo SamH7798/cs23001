@@ -1,0 +1,34 @@
+
+#ifndef CS2_UTILITIES_HPP_
+#define CS2_UTILITIES_HPP_
+
+#include<iostream>
+#include <fstream>
+#include "../string/string.hpp"
+#include "stack.hpp"
+
+
+
+
+
+void toPostfix(std::ifstream& in, std::ostream& out); 
+
+void toAssembly(std::ifstream& in, std::ostream& out);
+
+String intToString(int);
+
+char intToChar(int);
+
+String getOperator(const String& op);
+
+String getToken(std::ifstream& in); 
+
+
+
+
+
+
+
+
+
+#endif

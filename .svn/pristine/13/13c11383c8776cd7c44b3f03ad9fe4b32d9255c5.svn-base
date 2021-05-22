@@ -1,0 +1,44 @@
+#include <iostream>
+#include<array>
+     #ifndef BIGINT_H
+     #define BIGINT_H
+
+         
+const int CAPACITY = 400; 
+
+
+class bigint{
+
+public:
+  
+  bigint();
+
+  bigint(int);
+
+  bigint(const char[]);
+
+  void debugprint(std::ostream&) const;
+ 
+  friend std::ostream& operator<<(std::ostream&, bigint );
+
+  operator==();
+private:
+  char digits[CAPACITY];
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #endif

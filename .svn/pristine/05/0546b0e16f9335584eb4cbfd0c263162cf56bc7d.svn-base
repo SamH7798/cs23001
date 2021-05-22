@@ -1,0 +1,76 @@
+ #inlcude "bigint.h"
+
+
+
+    bigint::bigint(){
+      for(int i = 0; i < CAPACITY; ++i){
+	digits[i] = 0;
+      
+      }
+}
+
+bigint::bigint(int num){
+  if(num>0){
+    for(int i = 0; i < CAPACITY; ++i){
+      digits[i] = num %10;
+      num = num/10;
+    
+    }
+  }
+
+}
+
+
+bigint::bigint(const char x[]){
+  int charsize = 0;
+  while(x[charsize != '/0'){
+      ++charsize;
+    
+   
+    }
+    
+    int temp = 0;
+    for(int i = 0; i < charsize; ++i){
+     temp = x[charsize -i]
+      temp = temp - '0';
+      digits[i] = temp
+
+    }
+
+    for(int i = charsize; i < CAPATICY; ++i){
+      digits[i] = 0 ;
+    
+
+    }
+
+}
+
+  void debugprint(std::ostream& x)const{
+
+    for(int i = 0; i <  CAPACITY-1; ++i){
+      std::cout<<'|' digits[i] '|'; std::endl;
+
+    }
+
+
+
+
+  }
+
+  friend std::ostream operator<<(ostream&  out, bigint a){
+    int index = CAPACITY;
+    while(a.digits[index - 1] == 0){
+      --index;
+
+      }
+
+    for(int i = index; i < -1; --i){
+
+      out<< a.digits[i];
+    }
+  }
+  operator==(){
+
+
+
+}

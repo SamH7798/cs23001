@@ -1,0 +1,126 @@
+//  Stack class test program
+//
+//  Tests: XXX
+//
+
+#include "stack.hpp"
+#include <cassert>
+#include <iostream>
+#include "../string/string.hpp"
+
+//===========================================================================
+int main ()
+{
+  {
+    //------------------------------------------------------
+    // SETUP FIXTURE
+    stack<int> test;
+  
+    // TEST
+    test.push(3);
+
+    // VERIFY
+    assert(test.empty() == false);
+    assert(test.top() == 3);
+  
+  }
+  {
+  //------------------------------------------------------
+  // SETUP FIXTURE
+  stack<int> test;
+
+  // TEST
+  test.push(3);
+  test.pop();
+  
+  // VERIFY
+  assert(test.empty() == true);
+
+  }
+  {
+//------------------------------------------------------
+// SETUP FIXTURE
+stack<char> test;
+
+// TEST
+test.push("a");
+test.pop();
+
+// VERIFY
+assert(test.empty() == true);
+
+  }
+  {
+//------------------------------------------------------
+// SETUP FIXTURE
+stack<int> test;
+
+// TEST
+test.push(3);
+test.push(4);
+test.push(5);
+
+// VERIFY
+assert(test.empty() == false);
+assert(test.top() == 3);
+  }
+  {
+//------------------------------------------------------
+// SETUP FIXTURE
+stack<char> test;
+
+// TEST
+ test.push("a");
+ test.push("b");
+ test.push("c");
+
+// VERIFY
+assert(test.empty() == false);
+assert(test.top() == "a");
+  }
+  {
+//------------------------------------------------------
+// SETUP FIXTURE
+stack<char> test;
+
+// TEST
+test.push("z");
+ test.pop();
+// VERIFY
+assert(test.empty() == true);
+
+  }
+  {
+  //------------------------------------------------------
+  // SETUP FIXTURE
+  stack<char> test;
+
+  // TEST
+  test.push("abc");
+  test.pop();
+  // VERIFY
+  assert(test.empty() == true);
+  
+  }
+  {
+  //------------------------------------------------------
+  // SETUP FIXTURE
+  stack<char> test;
+
+  // TEST
+  test.push("abc");
+  test.push("jkls");
+
+  test.pop();
+  // VERIFY
+  assert(test.empty() != false);
+  
+  }
+
+
+
+  // ADD ADDITIONAL TESTS AS NECESSARY
+
+  std::cout << "Done testing push_pop" << std::endl;
+}
+

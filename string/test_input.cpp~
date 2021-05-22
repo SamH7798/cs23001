@@ -1,0 +1,31 @@
+#include "string.hpp"
+#include <cassert>
+#include <iostream>
+#include <iostream>
+#include <fstream>
+//===========================================================================
+/*
+int main ()
+{
+  {
+    //------------------------------------------------------
+    // SETUP FIXTURE
+    std::ifstream in;
+    in.open(log_2_small.txt);
+    
+    String str1;
+    // TEST
+    while(in >> str1){
+
+      std::cout << str1 << std::endl;
+
+    }
+
+    in.close(); 
+  }
+  
+
+  std::cout<< "Done testing input" <<std::endl;
+
+}
+/*

@@ -1,0 +1,398 @@
+// bigint Test Program
+//
+// Tests:  multiply, uses ==
+//
+#include <iostream>
+#include <cassert>
+#include "bigint.hpp"
+
+//===========================================================================
+int main () {
+    
+    {
+        //------------------------------------------------------
+        // Setup fixture
+        bigint left(0);
+        bigint right(0);
+        bigint result;
+        
+        // Test 
+        result = left * right;
+        
+        // Verify
+        assert(left   == 0);
+        assert(right  == 0);
+        assert(result == 0);
+    }
+    
+    {
+        //------------------------------------------------------
+        // Setup fixture
+        bigint left(1);
+        bigint right(0);
+        bigint result;
+        
+        // Test 
+        result = left * right;
+        
+        // Verify
+        assert(left   == 1);
+        assert(right  == 0);
+        assert(result == 0);
+    }
+    
+    {
+        //------------------------------------------------------
+        // Setup fixture
+        bigint left(0);
+        bigint right(1);
+        bigint result;
+        
+        // Test 
+        result = left * right;
+        
+        // Verify
+        assert(left   == 0);
+        assert(right  == 1);
+        assert(result == 0);
+    }
+    
+    {
+        //------------------------------------------------------
+        // Setup fixture
+        bigint left(123);
+        bigint right(56);
+        bigint result;
+        
+        // Test 
+        result = left * right;
+        
+        // Verify
+        assert(left   ==  123);
+        assert(right  ==   56);
+        assert(result == 6888);
+    }
+    
+    {
+        //------------------------------------------------------
+        // Setup fixture
+        bigint left(65);
+        bigint right(321);
+        bigint result;
+        
+        // Test 
+        result = left * right;
+        
+        // Verify
+        assert(left   ==    65);
+        assert(right  ==   321);
+        assert(result == 20865);
+    }
+    
+    {
+        //------------------------------------------------------
+        // Setup fixture
+        bigint left(9999);
+        bigint right(2);
+        bigint result;
+        
+        // Test 
+        result = left * right;
+        
+        // Verify
+        assert(left   ==  9999);
+        assert(right  ==     2);
+        assert(result == 19998);
+    }
+    
+    {
+        //------------------------------------------------------
+        // Setup fixture
+        bigint left(2);
+        bigint right(999999);
+        bigint result;
+        
+        // Test 
+        result = left * right;
+        
+        // Verify
+        assert(left   ==       2);
+        assert(right  ==  999999);
+        assert(result == 1999998);
+    }
+    {
+        //------------------------------------------------------
+        // Setup fixture
+        bigint left(99);
+        bigint right(99);
+        bigint result;
+
+        // Test
+        result = left * right;
+
+        // Verify
+        assert(left   ==  99);
+        assert(right  ==  99);
+        assert(result ==  9801);
+    }
+
+
+    {
+        //------------------------------------------------------
+        // Setup fixture
+        bigint left("2222");
+        bigint right("888888888888888888888888888888888888");
+        bigint result;
+        
+        // Test 
+        result = left * right;
+        
+        // Verify
+        assert(left   == "2222");
+        assert(right  == "888888888888888888888888888888888888");
+        assert(result == "1975111111111111111111111111111111109136");
+    }
+    
+    {
+        //------------------------------------------------------
+        // Setup fixture
+        bigint left("777777777777777777777777777777777777777777777");
+        bigint right("333333");
+        bigint result;
+        
+        // Test 
+        result = left * right;
+        
+        // Verify
+        assert(left   == "777777777777777777777777777777777777777777777");
+        assert(right  == "333333");
+        assert(result == "259258999999999999999999999999999999999999999740741");
+    }
+    
+    {
+        //------------------------------------------------------
+        // Setup fixture
+        bigint left("111111111111111111111111111111111111111111");
+        bigint right("999999999999999999999999999999999999999999");
+        bigint result;
+        
+        // Test 
+        result = left * right;
+        
+        // Verify
+        assert(left   == "111111111111111111111111111111111111111111");
+        assert(right  == "999999999999999999999999999999999999999999");
+        assert(result == "111111111111111111111111111111111111111110888888888888888888888888888888888888888889");
+    }
+    
+    //Add test cases as needed.
+    //Add 12 additonal test cases
+ 
+    {
+      //1).
+      // Setup fixture
+      bigint left("2789364572684935");
+      bigint right("213");
+      bigint result;
+
+      // Test
+      result = left * right;
+
+      // Verify
+      assert(left   == "2789364572684935");
+      assert(right  == "213");
+      assert(result == "594134654000000000");
+
+
+
+
+    }
+    //-----------------------------------------------------------    
+    {
+      // 2).
+      // Setup fixture
+      bigint left("89345672345980");
+      bigint right("9999");
+      bigint result;
+
+      // Test
+      result = left * right;
+
+      // Verify
+      assert(left   == "89345672345980");
+      assert(right  == "9999");
+      assert(result == "893367377800000000");
+
+
+
+
+    }
+    //-----------------------------------------------------------
+    {
+      // 3).
+      // Setup fixture
+      bigint left("128734901723895");
+      bigint right("7893452");
+      bigint result;
+
+      // Test
+      result = left * right;
+
+      // Verify
+      assert(left   == "128734901723895");
+      assert(right  == "7893452");
+      assert(result == "1016162767000000000000");
+
+
+    }
+    //-----------------------------------------------------------
+    {    
+      // 4).
+      // Setup fixture
+      bigint left("6524738923647985");
+      bigint right("981732414789023721348738249");
+      bigint result;
+
+      // Test
+      result = left * right;
+
+      // Verify
+      assert(left   == "6524738923647985");
+      assert(right  == "981732414789023721348738249");
+      assert(result == "6405547699000000000000000000000000000000000");
+    }
+    //-----------------------------------------------------------
+    {
+      // 5).
+      // Setup fixture
+      bigint left("238794123981291842342342");
+      bigint right("67832342");
+      bigint result;
+
+      // Test
+      result = left * right;
+
+      // Verify
+      assert(left   == "238794123981291842342342");
+      assert(right  == "67832342");
+      assert(result == "2608203418000000000000000000");
+
+    }
+    //-----------------------------------------------------------
+    {
+      // 6).
+      // Setup fixture
+      bigint left("890987654534567999");
+      bigint right("99998989");
+      bigint result;
+
+      // Test
+      result = left * right;
+
+      // Verify
+      assert(left   == "890987654534567999");
+      assert(right  == "99998989");
+      assert(result == "89097864660000000000000000");
+
+    }
+    //-----------------------------------------------------------
+    {
+      // 7).
+      // Setup fixture
+      bigint left("4789019802908724");
+      bigint right("552545261");
+      bigint result;
+
+      // Test
+      result = left * right;
+
+      // Verify
+      assert(left   == "4789019802908724");
+      assert(right  == "552545261");
+      assert(result == "2646150197000000000000000");
+    }
+    //-----------------------------------------------------------
+    {
+      // 8).
+      // Setup fixture
+      bigint left("1892318904327895398");
+      bigint right("7892340");
+      bigint result;
+
+      // Test
+      result = left * right;
+
+      // Verify
+      assert(left   == "1892318904327895398");
+      assert(right  == "7892340");
+      assert(result == "14934824180000000000000000");
+    }
+    //-----------------------------------------------------------
+    {
+      // 9).
+      // Setup fixture
+      bigint left("77832497534895327832879234");
+      bigint right("2345783272");
+      bigint result;
+
+      // Test
+      result = left * right;
+
+      // Verify
+      assert(left   == "77832497534895327832879234");
+      assert(right  == "2345783272");
+      assert(result == "182578170700000000000000000000000000");
+
+    }
+    //-----------------------------------------------------------
+    {
+      // 10).
+      // Setup fixture
+      bigint left("8927430587924352");
+      bigint right("314252345");
+      bigint result;
+
+      // Test
+      result = left * right;
+
+      // Verify
+      assert(left   == "8927430587924352");
+      assert(right  == "314252345");
+      assert(result == "2805465997000000000000000");
+    }
+    //-----------------------------------------------------------
+    {
+      // 11).
+      // Setup fixture
+      bigint left("367898675793939373");
+      bigint right("98379839839");
+      bigint result;
+
+      // Test
+      result = left * right;
+
+      // Verify
+      assert(left   == "367898675793939373");
+      assert(right  == "98379839839");
+      assert(result == "36193812800000000000000000000");
+    }
+    //-----------------------------------------------------------
+    {
+      // 12).
+      // Setup fixture
+      bigint left("9999999999");
+      bigint right("9999999999");
+      bigint result;
+
+      // Test
+      result = left * right;
+
+      // Verify
+      assert(left   == "9999999999");
+      assert(right  == "9999999999");
+      assert(result == "99999999980000000000");
+
+    }
+
+   std::cout << "Done testing multiply" << std::endl;
+}
